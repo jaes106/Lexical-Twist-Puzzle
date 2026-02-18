@@ -14,16 +14,19 @@ public class LexicalTwistPuzzle {
         System.out.println("Enter the second word:");
         String secondWord = sc.nextLine();
 
-        if (firstWord.contains(" ")) {
-            System.out.println(firstWord + " is an invalid word");
+        if (firstWord.contains(" ") || secondWord.contains(" ")) {
+            System.out.println("Invalid word input");
             return;
         }
 
-        if (secondWord.contains(" ")) {
-            System.out.println(secondWord + " is an invalid word");
-            return;
-        }
+        String reversed = new StringBuilder(firstWord)
+                .reverse()
+                .toString();
 
-        System.out.println("Valid inputs received.");
+        if (reversed.equalsIgnoreCase(secondWord)) {
+            System.out.println("Reverse match found");
+        } else {
+            System.out.println("Not a reverse match");
+        }
     }
 }
