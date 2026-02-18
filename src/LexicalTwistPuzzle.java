@@ -24,7 +24,13 @@ public class LexicalTwistPuzzle {
                 .toString();
 
         if (reversed.equalsIgnoreCase(secondWord)) {
-            System.out.println("Reverse match found");
+
+            String transformed = reversed
+                    .toLowerCase()
+                    .replaceAll("[aeiou]", "@");
+
+            System.out.println(transformed);
+
         } else {
             System.out.println("Not a reverse match");
         }
