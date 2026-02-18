@@ -32,7 +32,21 @@ public class LexicalTwistPuzzle {
             System.out.println(transformed);
 
         } else {
-            System.out.println("Not a reverse match");
+
+            String combined = (firstWord + secondWord).toUpperCase();
+
+            int vowels = 0;
+            int consonants = 0;
+
+            for (char c : combined.toCharArray()) {
+                if ("AEIOU".indexOf(c) != -1)
+                    vowels++;
+                else if (Character.isLetter(c))
+                    consonants++;
+            }
+
+            System.out.println("Vowels: " + vowels);
+            System.out.println("Consonants: " + consonants);
         }
     }
 }
